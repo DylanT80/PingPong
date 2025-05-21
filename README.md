@@ -1,39 +1,33 @@
-# FirstRaylibProject
+# PingPong
 
-This is a project built using [Raylib](https://www.raylib.com/), a simple and easy-to-use library to enjoy game programming.
+## Description
+PingPong is a simple game project where players can enjoy a classic table tennis experience. The game is designed for fun and learning game development concepts.
 
-## Features
+## Goals
 
-- **Feature 1**: Utilize Raylib to create a window and draw textures.
-- **Feature 2**: Use collision logic to create a simple platformer
+- Make a classic Ping Pong game
+- Utilize classes and stuff (i.e. polymorphism)
+- Eventually implement some form of networking!
 
-## Prerequisites
+## Prerequsites
 
 - Install [Raylib](https://github.com/raysan5/raylib#installation).
 - A C/C++ compiler (e.g., GCC, Clang, or MSVC).
 - Make
 
 ## Installation
-
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/FirstRaylibProject.git
-    cd FirstRaylibProject
-    ```
+   ```bash
+   git clone https://github.com/yourusername/PingPong.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd PingPong
+   ```
+3. Run the application:
+   ```bash
+   sh run.sh
+   ```
 
-2. Run the application:
-    ```bash
-    sh run.sh
-    ```
-
-## Usage
-
-WASD movement and Space to jump.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+## How to Play
+WIP
