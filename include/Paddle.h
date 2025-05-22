@@ -11,11 +11,13 @@
  * and a sprint modifier to control paddle velocity.
  */
 class Paddle : public Sprite {
-private:
+protected:
     int width;               ///< Width of the paddle in pixels.
     int height;              ///< Height of the paddle in pixels.
     float speed = 5.0f;      ///< Base movement speed of the paddle.
     float sprint_modifier = 1.5f; ///< Multiplier applied to speed when sprinting.
+
+    void limit_movement();
 
 public:
     /**
@@ -27,7 +29,7 @@ public:
      * @param width Width of the paddle in pixels.
      * @param height Height of the paddle in pixels.
      */
-    Paddle(int x, int y, Color color, int width, int height);
+    Paddle(float x, float y, Color color, int width, int height);
 
     /**
      * @brief Draws the paddle on the screen.
@@ -35,6 +37,11 @@ public:
      * Overrides the pure virtual Draw method in Sprite.
      */
     void Draw() const override;
+
+    /**
+     * @brief Updates paddle movements
+     */
+    void Update() override;
 
     /**
      * @brief Handles player input to control paddle movement and sprinting.

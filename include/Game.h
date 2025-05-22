@@ -3,6 +3,7 @@
 
 #include "Ball.h"
 #include "Paddle.h"
+#include "CpuPaddle.h"
 
 /**
  * @class Game
@@ -17,6 +18,7 @@ private:
 
     Ball* ball;
     Paddle* paddle_one;
+    CpuPaddle* paddle_two;
 
     /// @brief Handles player input amongst all game objects within the game window
     void handleInput();

@@ -12,7 +12,7 @@
  */
 class Sprite {
 protected:
-    int x, y;           ///< Current position of the sprite on the screen (pixels).
+    float x, y;           ///< Current position of the sprite on the screen (pixels).
     float vel_x, vel_y; ///< Current velocity in x and y directions (pixels per update).
     Color color;        ///< Color used to draw the sprite.
 
@@ -24,7 +24,7 @@ public:
      * @param y Initial y-position.
      * @param color Color used for rendering the sprite.
      */
-    Sprite(int x, int y, Color color) : x(x), y(y), color(color), vel_x(0), vel_y(0) {}
+    Sprite(float x, float y, Color color) : x(x), y(y), color(color), vel_x(0), vel_y(0) {}
 
     /**
      * @brief Set horizontal velocity.
@@ -43,14 +43,24 @@ public:
      * 
      * Can be overridden for custom behavior.
      */
-    virtual void apply_vel_x() { x += static_cast<int>(vel_x); }
+    virtual void apply_vel_x() { x += vel_x; }
 
     /**
      * @brief Update y-position by adding vertical velocity.
      * 
      * Can be overridden for custom behavior.
      */
-    virtual void apply_vel_y() { y += static_cast<int>(vel_y); }
+    virtual void apply_vel_y() { y += vel_y; }
+
+    /**
+     * @brief Get x-coord of sprite
+     */
+    float get_x() { return x; }
+
+    /**
+     * @brief Get y-coord of sprite
+     */
+    float get_y() { return y; }
 
     /**
      * @brief Draw the sprite to the screen.

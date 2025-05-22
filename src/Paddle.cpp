@@ -1,9 +1,25 @@
 #include "Paddle.h"
 
-Paddle::Paddle(int x, int y, Color color, int width, int height) : Sprite(x, y, color), width(width), height(height) {}
+void Paddle::limit_movement() {
+    if (y <= 0) {
+        y = 0;
+    }
+    if (y + height >= GetScreenHeight()) {
+        y = GetScreenHeight() - height;
+    }
+}
+
+Paddle::Paddle(float x, float y, Color color, int width, int height) : Sprite(x, y, color), width(width), height(height) {}
 
 void Paddle::Draw() const {
     DrawRectangle(x, y, width, height, color);
+}
+
+void Paddle::Update() {
+    apply_vel_x();
+    apply_vel_y();
+
+    limit_movement();
 }
 
 void Paddle::HandleInput() {  

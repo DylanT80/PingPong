@@ -22,7 +22,7 @@ public:
      * @param color Color of the ball.
      * @param radius Radius of the ball in pixels.
      */
-    Ball(int x, int y, Color color, float radius);
+    Ball(float x, float y, Color color, float radius);
 
     /**
      * @brief Draws the ball on the screen.
@@ -30,6 +30,11 @@ public:
      * Overrides the pure virtual Draw method in Sprite.
      */
     void Draw() const override;
+
+    /**
+     * @brief Update behavior of ball
+     */
+    void Update() override;
 };
 
 #endif
