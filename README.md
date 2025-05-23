@@ -8,7 +8,7 @@ PingPong is a simple game project where players can enjoy a classic table tennis
 Built off a [tutorial](https://www.youtube.com/watch?v=VLJlTaFvHo4) (ty).
 Implemented/Planning to implement the following features:
 
-- 3 secound run off from round restarts
+- 3 secound run off from round restarts ✅
 - Powerups
 - Networking!
 
