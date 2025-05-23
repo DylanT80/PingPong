@@ -3,11 +3,20 @@
 ## Description
 PingPong is a simple game project where players can enjoy a classic table tennis experience. The game is designed for fun and learning game development concepts.
 
-## Goals
+## Additional Features
+
+Built off a [tutorial](https://www.youtube.com/watch?v=VLJlTaFvHo4) (ty).
+Implemented/Planning to implement the following features:
+
+- 3 secound run off from round restarts
+- Powerups
+- Networking!
+
+## Main Goals
 
 - Make a classic Ping Pong game
 - Utilize classes and stuff (i.e. polymorphism)
-- Eventually implement some form of networking!
+- Eventually implement cool new game mechanics!
 
 ## Prerequsites
 
@@ -30,4 +39,4 @@ PingPong is a simple game project where players can enjoy a classic table tennis
    ```
 
 ## How to Play
-WIP
+W & D for Up & Down respectively. Going against a simple AI.
