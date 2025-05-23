@@ -14,8 +14,8 @@ Implemented/Planning to implement the following features:
 
 ## Main Goals
 
-- Make a classic Ping Pong game
-- Utilize classes and stuff (i.e. polymorphism)
+- ✅ Make a classic Ping Pong game ✅
+- ✅ Utilize classes and stuff (i.e. polymorphism) ✅
 - Eventually implement cool new game mechanics!
 
 ## Prerequsites
