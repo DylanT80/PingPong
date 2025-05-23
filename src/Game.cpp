@@ -1,27 +1,6 @@
 #include <Game.h>
 #include <raylib.h>
 
-typedef struct Timer {
-    double startTime;   // Start time (seconds)
-    double lifeTime;    // Lifetime (seconds)
-} Timer;
-
-void StartTimer(Timer *timer, double lifetime)
-{
-    timer->startTime = GetTime();
-    timer->lifeTime = lifetime;
-}
-
-bool TimerDone(Timer timer)
-{
-    return GetTime() - timer.startTime >= timer.lifeTime;
-}
-
-double GetElapsed(Timer timer)
-{
-    return GetTime() - timer.startTime;
-}
-
 Game::Game(int screen_width, int screen_height, int target_fps) : screen_width(screen_width), screen_height(screen_height), target_fps(target_fps), frozen(false) {
     ball = new Ball(screen_width / 2, screen_height / 2, WHITE, 15.0f, 36.0f);
 
