@@ -12,8 +12,8 @@
  */
 class Paddle : public Sprite {
 protected:
-    int width;               ///< Width of the paddle in pixels.
-    int height;              ///< Height of the paddle in pixels.
+    float width;               ///< Width of the paddle in pixels.
+    float height;              ///< Height of the paddle in pixels.
     float speed = 5.0f;      ///< Base movement speed of the paddle.
     float sprint_modifier = 1.5f; ///< Multiplier applied to speed when sprinting.
 
@@ -29,7 +29,7 @@ public:
      * @param width Width of the paddle in pixels.
      * @param height Height of the paddle in pixels.
      */
-    Paddle(float x, float y, Color color, int width, int height);
+    Paddle(float x, float y, Color color, float width, float height);
 
     /**
      * @brief Draws the paddle on the screen.
@@ -49,6 +49,16 @@ public:
      * Overrides the default HandleInput from Sprite.
      */
     void HandleInput() override;
+    
+    /**
+     * @brief Get width of paddle
+     */
+    float get_width();
+
+    /**
+     * @brief Get height of paddle
+     */
+    float get_height();
 };
 
 #endif

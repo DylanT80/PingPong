@@ -12,9 +12,10 @@
  */
 class Sprite {
 protected:
-    float x, y;           ///< Current position of the sprite on the screen (pixels).
+    float x, y, initial_x, initial_y;           ///< Current and initial position of the sprite on the screen (pixels).
     float vel_x, vel_y; ///< Current velocity in x and y directions (pixels per update).
     Color color;        ///< Color used to draw the sprite.
+    bool frozen;
 
 public:
     /**
@@ -24,7 +25,17 @@ public:
      * @param y Initial y-position.
      * @param color Color used for rendering the sprite.
      */
-    Sprite(float x, float y, Color color) : x(x), y(y), color(color), vel_x(0), vel_y(0) {}
+    Sprite(float x, float y, Color color) : x(x), y(y), initial_x(x), initial_y(y), color(color), vel_x(0), vel_y(0), frozen(false) {}
+
+    /**
+     * @brief Get vel-x of sprite
+     */
+    float get_vel_x() { return this->vel_x; }
+
+    /**
+     * @brief Get vel-y of sprite
+     */
+    float get_vel_y() { return this->vel_y; }
 
     /**
      * @brief Set horizontal velocity.
@@ -63,6 +74,16 @@ public:
     float get_y() { return y; }
 
     /**
+     * @brief set x-coord of sprite
+     */
+    void set_x(float x) { this->x = x; }
+
+    /**
+     * @brief set y-coord of sprite
+     */
+    void set_y(float y) { this->y = y; }
+
+    /**
      * @brief Draw the sprite to the screen.
      * 
      * Must be implemented by derived classes.
@@ -76,6 +97,9 @@ public:
      * Can be overridden for more complex update logic.
      */
     virtual void Update() {
+        if (frozen) {
+            return;
+        }
         apply_vel_x();
         apply_vel_y();
     }
@@ -86,6 +110,21 @@ public:
      * Empty default implementation; override if input handling is needed.
      */
     virtual void HandleInput() {};
+
+    /**
+     * @brief Reset sprite
+     */
+    virtual void Reset() {
+        x = initial_x;
+        y = initial_y;
+    };
+
+    /**
+     * @brief Freeze sprites making the unrenderable
+     */
+    virtual void Freeze(bool isFrozen) {
+        frozen = isFrozen;
+    }
 };
 
 #endif

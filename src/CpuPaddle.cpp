@@ -1,8 +1,12 @@
 #include "CpuPaddle.h"
 
-CpuPaddle::CpuPaddle(float x, float y, Color color, int width, int height) : Paddle(x, y, color, width, height) {}
+CpuPaddle::CpuPaddle(float x, float y, Color color, float width, float height) : Paddle(x, y, color, width, height) {}
 
 void CpuPaddle::Update(float ball_y) {
+    if (frozen) {
+        return;
+    }
+
     if (y + height / 2 > ball_y) {
         vel_y = -speed;
     }

@@ -9,13 +9,16 @@ void Paddle::limit_movement() {
     }
 }
 
-Paddle::Paddle(float x, float y, Color color, int width, int height) : Sprite(x, y, color), width(width), height(height) {}
+Paddle::Paddle(float x, float y, Color color, float width, float height) : Sprite(x, y, color), width(width), height(height) {}
 
 void Paddle::Draw() const {
-    DrawRectangle(x, y, width, height, color);
+    DrawRectangleRounded(Rectangle{x, y, width, height}, 0.8, 0, color);
 }
 
 void Paddle::Update() {
+    if (frozen) {
+        return;
+    }
     apply_vel_x();
     apply_vel_y();
 
@@ -37,4 +40,12 @@ void Paddle::HandleInput() {
     } else {
         set_vel_y(curr_speed);
     }
+}
+
+float Paddle::get_width() {
+    return width;
+}
+
+float Paddle::get_height() {
+    return height;
 }

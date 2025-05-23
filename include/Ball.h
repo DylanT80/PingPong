@@ -11,8 +11,8 @@
  */
 class Ball : public Sprite {
 private:
-    int radius; ///< Radius of the ball in pixels.
-
+    float radius; ///< Radius of the ball in pixels.
+    float speed; ///< Speed of the ball
 public:
     /**
      * @brief Construct a new Ball object.
@@ -22,7 +22,7 @@ public:
      * @param color Color of the ball.
      * @param radius Radius of the ball in pixels.
      */
-    Ball(float x, float y, Color color, float radius);
+    Ball(float x, float y, Color color, float speed, float radius);
 
     /**
      * @brief Draws the ball on the screen.
@@ -35,6 +35,16 @@ public:
      * @brief Update behavior of ball
      */
     void Update() override;
+
+    /**
+     * @brief Reset behavior of ball
+     */
+    void Reset() override;
+
+    /**
+     * @brief Get radius of ball 
+     */
+    float get_radius();
 };
 
 #endif

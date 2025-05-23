@@ -5,7 +5,7 @@
 
 class CpuPaddle : public Paddle {
 public:
-    CpuPaddle(float x, float y, Color color, int width, int height);
+    CpuPaddle(float x, float y, Color color, float width, float height);
 
     /**
      * @brief Updates paddle movements
